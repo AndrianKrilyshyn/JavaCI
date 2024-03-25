@@ -1,0 +1,27 @@
+  name: Java CI
+  on:
+    push:
+    workflow_dispatch:
+  jobs:
+    set_up_steps:
+      runs-on: ubuntu:latest
+      steps:
+        - name: Runned OS
+          run: echo "The task is running on a ${{runner.os}}
+        - name: Set Up JDK
+          uses: actions/setup-java@v3
+          with:
+            java-version: '21'
+            distribution: 'zulu'
+        - name: Show java version
+          run: "java -version"
+        - name: Checkout code
+          uses: actions/checkout@v3
+        - name: Install dependencies
+          run: "maven compile"
+        - name: Build application
+          run: 'mvn package -DskipTests'
+        - name: Test application
+          run: 'mvn test'
+          
+  
