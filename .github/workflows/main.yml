@@ -28,8 +28,7 @@ jobs:
         run: 'mvn test'
 
   additional_task:
-    if: startsWith(github.head_ref, 'release/')
     runs-on: ubuntu-latest
     steps:
       - name: PR info
-        run: echo "The head of this PR starts with 'release/'"
+        run: echo "The head of this PR starts with ${{github.ref}}"
