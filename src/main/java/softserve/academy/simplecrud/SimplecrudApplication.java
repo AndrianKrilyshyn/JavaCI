@@ -8,6 +8,7 @@ public class SimplecrudApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(SimplecrudApplication.class, args);
+        String someChange="";
     }
 
 }
