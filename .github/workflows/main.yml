@@ -26,11 +26,11 @@
         - name: Test application
           run: 'mvn test'
     additional_task:
-      if: startsWith(github.head_ref, 'releases/')
+      if: startsWith(github.head_ref, 'main/')
       runs-on: ubuntu-latest
       steps:
         - name: PR info
-          run: echo "The head of this PR starts with 'releases/'"
+          run: echo "The head of this PR starts with 'main/'"
      
     
       
