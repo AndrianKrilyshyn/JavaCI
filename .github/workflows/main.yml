@@ -4,7 +4,7 @@
     workflow_dispatch:
   jobs:
     set_up_steps:
-      runs-on: ubuntu:latest
+      runs-on: ubuntu-latest
       steps:
         - name: Runned OS
           run: echo "The task is running on a ${{runner.os}}
